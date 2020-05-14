@@ -1,0 +1,136 @@
+<!-- <html lang=”en”>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> Name of your awesome camera app
+    <title>Camera App</title> Link to your main style sheet
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    Camera
+    <main id="camera">
+        Camera sensor
+        <canvas id="camera--sensor"></canvas> Camera view
+        <video id="camera--view" autoplay playsinline></video> Camera output
+        <img src="//:0" alt="" id="camera--output"> Camera trigger
+        <button id="camera--trigger">Take a picture</button> </main> Reference to your JavaScript file
+    <script src="app.js"></script>
+</body>
+
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Camera selection</title>
+  <link rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Camera fun</h1>
+  </header>
+
+  <main>
+    <div class="controls">
+      <button id="button">Get camera</button>
+      <select id="select">
+        <option></option>
+      </select>
+    </div>
+
+    <video id="video" autoplay playsinline></video>
+  </main>
+
+  <footer>
+    <p>Built by
+      <a href="https://twitter.com/philnash">@philnash</a>
+    </p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Video &amp; Audio Input</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        p>audio,
+        p>video,
+        p>img{
+            max-width:90%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Video &amp; Audio Input</h1>
+        <h2>Capturing Media with HTML</h2>
+    </header>
+    <main>
+        <form action="#" id="myform" enctype="multipart/form-data">
+            <label for="capture">Capture Media</label>
+            
+            <input type="file" 
+            id="capture" 
+            accept="image/*,video/*,audio/*" 
+            capture 
+            multiple />
+            
+            <br/>
+            <input type="submit" value="Process" />
+        </form>
+        <p><img src="" id="img" alt="from phone"/></p>
+        <p>
+            <audio src="" id="audio" controls></audio>
+        </p>
+        <p>
+            <video src="" id="video" controls></video>
+        </p>
+    </main>    
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', (ev)=>{
+            let form = document.getElementById('myform');
+            //get the captured media file
+            let input = document.getElementById('capture');
+            
+            input.addEventListener('change', (ev)=>{
+                console.dir( input.files[0] );
+                if(input.files[0].type.indexOf("image/") > -1){
+                    let img = document.getElementById('img');
+                    img.src = window.URL.createObjectURL(input.files[0]);
+                }
+                else if(input.files[0].type.indexOf("audio/") > -1 ){
+                    let audio = document.getElementById('audio');
+                    audio.src = window.URL.createObjectURL(input.files[0]);
+                }
+                else if(input.files[0].type.indexOf("video/") > -1 ){
+                    let video = document.getElementById('video');
+                    video.src=window.URL.createObjectURL(input.files[0]);
+                }
+                
+                
+            })
+            
+        })
+    </script>
+</body>
+</html>
